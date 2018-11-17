@@ -2,12 +2,16 @@
   "name": "moe-game-studio",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/main/entry.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vue-cli-service serve --port 23333 ./src/app/main.ts",
+    "preview": "electron --debug .",
+    "build": "vue-cli-service build --dest dist/app ./src/app/main.ts",
+    "lint": "vue-cli-service lint",
+    "build-window": "webpack --config ./.electron/webpack.base.config.js"
   },
   "dependencies": {
+    "element-ui": "^2.4.9",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
@@ -18,7 +22,12 @@
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-typescript": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
+    "electron": "^3.0.9",
+    "ts-loader": "^5.3.0",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vuex-class": "^0.3.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
